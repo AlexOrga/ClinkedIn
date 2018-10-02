@@ -18,6 +18,11 @@ namespace ClinkedIn.DataAccess
             new Clinker() { Name = "Ralph", Nickname = "Five Head", Charge = "18th DUI", Wallet = 10, SolitaryConfinement = false, Id = 5}
         };
 
+        public List<Clinker> GetClinkers()
+        {
+            return _allClinkers;
+        }
+
         public void Add(Clinker clinker)
         {
             clinker.Id = _allClinkers.Any() ? _allClinkers.Max(x => x.Id) + 1 : 1;
