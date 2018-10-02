@@ -8,6 +8,7 @@ namespace ClinkedIn.DataAccess
 {
     public class ClinkerStorage
     {
+
         static List<Clinker> _allClinkers = new List<Clinker>()
         {
             new Clinker() { Name = "Trevor", Nickname = "Lunch-Box", Charge = "Aggravated Cafeteria Robbery", Wallet = 50, SolitaryConfinement = true, Id = 1},
