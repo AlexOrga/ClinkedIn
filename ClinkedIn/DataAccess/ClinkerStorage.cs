@@ -118,5 +118,11 @@ namespace ClinkedIn.DataAccess
         {
             return _allClinkers.First(clinker => clinker.Id == id);
         }
+
+        public void AddFriend(int id)
+        {
+            var selectedClinker = _allClinkers.Where(clinker => clinker.Id == id);
+            _allClinkers.selectedClinker.
+        }
     }
 }
