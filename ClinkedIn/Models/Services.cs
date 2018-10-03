@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ClinkedIn.Models
 {
-    public class Services
+    public class Service
     {
         public string Name { get; set; }
         public int Cost { get; set; }
