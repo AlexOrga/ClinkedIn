@@ -22,7 +22,7 @@ namespace ClinkedIn.DataAccess
                 {
                     new Service {Name = "golden showers", Cost = 120, Description = "no explanation needed"},
                     new Service {Name = "shank guard", Cost = 90, Description = "pull his pants down"},
-                    new Service {Name = "clean bathrooms", Cost = 15, Description = "clean the toilets with warden's toothbrush"}
+                    new Service {Name = "clean", Cost = 15, Description = "i need to see my reflection"}
                 },
                 Id = 1
             },
