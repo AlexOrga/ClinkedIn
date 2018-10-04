@@ -36,9 +36,5 @@ namespace ClinkedIn.Controllers
             myInfo.Friends.Add(friendId);
             return Ok();
         }
-
-        
-
-        
     }
 }
