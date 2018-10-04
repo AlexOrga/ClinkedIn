@@ -11,29 +11,27 @@ namespace ClinkedIn.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class FriendsController : ControllerBase
+    public class EnemiesController : ControllerBase
     {
-
-        [HttpPut("{id}/friends")]
-        public IActionResult AddFriend( int id, [FromQuery] int friendId)
+        [HttpPut("{id}/enemies")]
+        public IActionResult AddEnemy(int id, [FromQuery] int enemyId)
         {
             var storage = new ClinkerStorage();
             var myInfo = storage.GetById(id);
-            var friendInfo = storage.GetById(friendId);
+            var enemyInfo = storage.GetById(enemyId);
 
-            if (friendInfo == null)
+            if (enemyInfo == null)
             {
                 return NotFound();
             }
-            else if (myInfo.Friends.Contains(friendId))
+            else if (myInfo.Friends.Contains(enemyId))
             {
-                myInfo.Enemies.Remove(friendId);
-                friendInfo.Enemies.Remove(id);
+                myInfo.Friends.Remove(enemyId);
+                enemyInfo.Friends.Remove(id);
             }
 
-            if (friendInfo == null) return NotFound();
-            friendInfo.Friends.Add(id);
-            myInfo.Friends.Add(friendId);
+            enemyInfo.Enemies.Add(id);
+            myInfo.Enemies.Add(enemyId);
             return Ok();
         }
     }
