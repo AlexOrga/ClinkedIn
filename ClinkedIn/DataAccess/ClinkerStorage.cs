@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ClinkedIn.Models;
-using ClinkedIn.DataAccess;
 
 namespace ClinkedIn.DataAccess
 {
@@ -29,6 +26,8 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
+                Friends = {2,3,4 },
+                
                 Id = 1
             },
             new Clinker()
@@ -100,10 +99,7 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
-                Friends =
-                {
-                    new int { Id = 4, }
-                },
+                
                 Id = 5
             }
         };

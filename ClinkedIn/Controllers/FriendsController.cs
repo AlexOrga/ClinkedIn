@@ -13,6 +13,7 @@ namespace ClinkedIn.Controllers
     [ApiController]
     public class FriendsController : ControllerBase
     {
+
         [HttpPut("{id}/friendId")]
         public IActionResult PutFriend(int id, int friendId)
         {
@@ -24,8 +25,6 @@ namespace ClinkedIn.Controllers
             return Ok();
         }
 
-        //public ActionResult<IEnumerable<Clinker>> GetById([FromQuery] int searchedId)
-        //{
-        //}
+        
     }
 }
