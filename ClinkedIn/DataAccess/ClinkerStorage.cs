@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ClinkedIn.Models;
 
 namespace ClinkedIn.DataAccess
@@ -28,6 +26,8 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
+                Friends = {2,3,4 },
+                
                 Id = 1
             },
             new Clinker()
@@ -99,6 +99,7 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
+                
                 Id = 5
             }
         };
@@ -117,6 +118,12 @@ namespace ClinkedIn.DataAccess
         public Clinker GetById(int id)
         {
             return _allClinkers.First(clinker => clinker.Id == id);
+        }
+
+        public void AddFriend(int id)
+        {
+            var selectedClinker = _allClinkers.Where(clinker => clinker.Id == id);
+            //_allClinkers
         }
     }
 }

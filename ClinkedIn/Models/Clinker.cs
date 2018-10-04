@@ -11,6 +11,7 @@ namespace ClinkedIn.Models
         public string Nickname { get; set; }
         public List<Service> Services { get; set; } = new List<Service>();
         public List<Interest> Interests { get; set; } = new List<Interest>();
+        public List<int> Friends { get; set; } = new List<int>();
         public string Charge { get; set; }
         public int Wallet { get; set; }
         public bool SolitaryConfinement { get; set; }
