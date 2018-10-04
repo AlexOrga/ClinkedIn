@@ -15,14 +15,24 @@ namespace ClinkedIn.Controllers
     {
 
         [HttpPut("{id}/friends")]
-        public IActionResult PutFriend([FromQuery] int id, int friendId)
+        public IActionResult AddFriend( int id, [FromQuery] int friendId)
         {
             var storage = new ClinkerStorage();
             var myInfo = storage.GetById(id);
-            var friend = storage.GetById(friendId);
+            var friendInfo = storage.GetById(friendId);
 
-            if (friend == null) return NotFound();
-            friend.Friends.Add(id);
+            if (friendInfo == null)
+            {
+                return NotFound();
+            }
+            else if (myInfo.Friends.Contains(friendId))
+            {
+                myInfo.Enemies.Remove(friendId);
+                friendInfo.Enemies.Remove(id);
+            }
+
+            if (friendInfo == null) return NotFound();
+            friendInfo.Friends.Add(id);
             myInfo.Friends.Add(friendId);
             return Ok();
         }
