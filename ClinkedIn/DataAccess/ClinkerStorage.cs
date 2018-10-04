@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ClinkedIn.Models;
+using ClinkedIn.DataAccess;
 
 namespace ClinkedIn.DataAccess
 {
@@ -99,6 +100,10 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
+                Friends =
+                {
+                    new int { Id = 4, }
+                },
                 Id = 5
             }
         };
@@ -122,7 +127,7 @@ namespace ClinkedIn.DataAccess
         public void AddFriend(int id)
         {
             var selectedClinker = _allClinkers.Where(clinker => clinker.Id == id);
-            _allClinkers.selectedClinker.
+            //_allClinkers
         }
     }
 }
