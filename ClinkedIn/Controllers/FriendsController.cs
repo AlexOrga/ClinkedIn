@@ -15,7 +15,7 @@ namespace ClinkedIn.Controllers
     {
 
         [HttpPut("{id}/friends")]
-        public IActionResult PutFriend([FromQuery] int id, int friendId)
+        public IActionResult PutFriend(int id, [FromQuery] int friendId)
         {
             var storage = new ClinkerStorage();
             var myInfo = storage.GetById(id);
