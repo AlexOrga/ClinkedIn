@@ -27,7 +27,8 @@ namespace ClinkedIn.DataAccess
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
                 Friends = {2,3,4 },
-                
+                Enemies = { 6,7,8},
+               
                 Id = 1
             },
             new Clinker()

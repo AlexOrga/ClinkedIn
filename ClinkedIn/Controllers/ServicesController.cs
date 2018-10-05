@@ -23,5 +23,16 @@ namespace ClinkedIn.Controllers
 
             return Ok(results);
         }
+
+        [HttpPost("{id}/services")]
+        public IActionResult PostNewService(int id, Service newService)
+        {
+            var storage = new ClinkerStorage();
+            var myService = storage.GetById(id).Services;
+
+            myService.Add(newService);
+
+            return Ok();
+        }
     }
 }
