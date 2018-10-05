@@ -13,6 +13,16 @@ namespace ClinkedIn.Controllers
     [ApiController]
     public class FriendsController : ControllerBase
     {
+        [HttpGet]
+        public ActionResult<IEnumerable<Clinker>> GetFriend([FromQuery]int friendId)
+        {
+            var storage = new ClinkerStorage();
+            var clinkers = storage.GetClinkers();
+
+            var results = clinkers.Where(clinker => clinker.Friends.Contains(friendId));
+
+            return Ok(results);
+        }
 
         [HttpPut("{id}/friends")]
         public IActionResult AddFriend( int id, [FromQuery] int friendId)
