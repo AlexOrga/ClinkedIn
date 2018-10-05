@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using ClinkedIn.Models;
 
@@ -27,7 +28,7 @@ namespace ClinkedIn.DataAccess
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
                 Friends = {2,3,4 },
-                
+                ReleaseDate = new DateTime(2035, 6, 5, 8, 0, 0),
                 Id = 1
             },
             new Clinker()
@@ -46,6 +47,7 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Making trashbag necklaces", Description = "Twisting up trash bags until they become prison jewelry"},
                 },
+                ReleaseDate = new DateTime(2040, 9, 1, 8, 0, 0),
                 Id = 2
             },
             new Clinker()
@@ -64,6 +66,7 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Making wine", Description = "Taking all the fruit from a confidant in the cafeteria and leaving them in the toilet of a cell until they ferment into the worst wine you've ever had."},
                 },
+                ReleaseDate = new DateTime(2020, 2, 17, 8, 0, 0),
                 Id = 3
             },
             new Clinker()
@@ -82,6 +85,7 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Working out", Description = "Gotta get big if you wanna run the yard."},
                 },
+                ReleaseDate = new DateTime(2089, 11, 1, 8, 0, 0),
                 Id = 4
             },
             new Clinker()
@@ -99,7 +103,7 @@ namespace ClinkedIn.DataAccess
                 {
                     new Interest {Name = "Cards", Description = "Playing cards you idiot"},
                 },
-                
+                ReleaseDate = new DateTime(2019, 1, 24, 8, 0, 0),
                 Id = 5
             }
         };
