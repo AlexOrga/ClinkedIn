@@ -33,5 +33,14 @@ namespace ClinkedIn.Controllers
             myInterests.Add(newInterest);
             return Ok();
         }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateInterest(int id, string name, Interest updatedInterest)
+        {
+            var storage = new ClinkerStorage();
+            var myInterests = storage.GetById(id).Interests;
+            
+            return Ok();
+        }
     }
 }
