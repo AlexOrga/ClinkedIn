@@ -29,6 +29,7 @@ namespace ClinkedIn.DataAccess
                 },
                 Friends = {2,3,4 },
                 ReleaseDate = new DateTime(2035, 6, 5, 8, 0, 0),
+                Enemies = { 6,7,8},
                 Id = 1
             },
             new Clinker()
