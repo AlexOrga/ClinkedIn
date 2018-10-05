@@ -29,6 +29,19 @@ namespace ClinkedIn.Controllers
             return _storage.GetClinkers();
         }
 
+        [HttpGet("{id}/daysRemaining")]
+        public ActionResult<IEnumerable<string>> GetDaysRemaining(int id)
+        {
+            var clinker = _storage.GetById(id);
+            var endDate = clinker.ReleaseDate;
+            var startDate = DateTime.Now;
+
+            TimeSpan t = endDate - startDate;
+            string countDown = string.Format("{0} Days, {1} Hours, {2} Minutes, {3} Seconds until release", t.Days, t.Hours, t.Minutes, t.Seconds);
+
+            return Ok(countDown);
+        }
+
         [HttpPost]
         public void Add(Clinker clinker)
         {
