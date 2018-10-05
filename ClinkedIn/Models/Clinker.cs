@@ -16,6 +16,7 @@ namespace ClinkedIn.Models
         public string Charge { get; set; }
         public int Wallet { get; set; }
         public bool SolitaryConfinement { get; set; }
+        public DateTime ReleaseDate { get; set; }
         public int Id { get; set; }
     }
 }
