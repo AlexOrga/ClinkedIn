@@ -24,7 +24,7 @@ namespace ClinkedIn.Controllers
             return Ok(results);
         }
 
-        [HttpPut("{id}/interests")]
+        [HttpPost("{id}")]
         public IActionResult AddNewInterest(int id, Interest newInterest)
         {
             var storage = new ClinkerStorage();
