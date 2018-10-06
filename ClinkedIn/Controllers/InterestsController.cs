@@ -24,7 +24,7 @@ namespace ClinkedIn.Controllers
             return Ok(results);
         }
 
-        [HttpPut("{id}/interests")]
+        [HttpPost("{id}")]
         public IActionResult AddNewInterest(int id, Interest newInterest)
         {
             var storage = new ClinkerStorage();
@@ -32,6 +32,40 @@ namespace ClinkedIn.Controllers
 
             myInterests.Add(newInterest);
             return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateInterest(int id, Interest updatedInterest)
+        {
+            var storage = new ClinkerStorage();
+            var myInterests = storage.GetById(id).Interests;
+
+           foreach(Interest interest in myInterests)
+            {
+                if(interest.Name == updatedInterest.Name)
+                {
+                    interest.Description = updatedInterest.Description;
+                }
+            }
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteInterest(int id, Interest interest)
+        {
+            var storage = new ClinkerStorage();
+            var clinker = storage.GetById(id);
+
+            foreach(Interest i in clinker.Interests)
+            {
+                if (i.Name == interest.Name)
+                {
+                    clinker.Interests.Remove(i);
+                    return Ok();
+                }
+            }
+
+            return NotFound();
         }
     }
 }
