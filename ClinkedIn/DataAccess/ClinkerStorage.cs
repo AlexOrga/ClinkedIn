@@ -109,6 +109,10 @@ namespace ClinkedIn.DataAccess
             }
         };
 
+        static ClinkerStorage()
+        {
+        }
+
         public List<Clinker> GetClinkers()
         {
             return _allClinkers;
