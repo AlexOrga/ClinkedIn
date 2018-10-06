@@ -13,9 +13,7 @@ namespace ClinkedIn.Controllers
     [ApiController]
     public class ClinkerController : ControllerBase
     {
-
         public readonly ClinkerStorage _storage;
-        
 
         public ClinkerController()
         {

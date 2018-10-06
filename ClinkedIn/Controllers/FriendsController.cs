@@ -30,7 +30,6 @@ namespace ClinkedIn.Controllers
                        friendsFriends.Add(clinker);
                     }
                 }
-                
             }
 
             return Ok(friendsFriends);
