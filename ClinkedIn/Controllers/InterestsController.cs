@@ -47,7 +47,6 @@ namespace ClinkedIn.Controllers
                     interest.Description = updatedInterest.Description;
                 }
             }
-            
             return Ok();
         }
 
