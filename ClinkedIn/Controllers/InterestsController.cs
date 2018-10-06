@@ -35,12 +35,38 @@ namespace ClinkedIn.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateInterest(int id, string name, Interest updatedInterest)
+        public IActionResult UpdateInterest(int id, Interest updatedInterest)
         {
             var storage = new ClinkerStorage();
             var myInterests = storage.GetById(id).Interests;
+
+           foreach(Interest interest in myInterests)
+            {
+                if(interest.Name == updatedInterest.Name)
+                {
+                    interest.Description = updatedInterest.Description;
+                }
+            }
             
             return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteInterest(int id, Interest interest)
+        {
+            var storage = new ClinkerStorage();
+            var clinker = storage.GetById(id);
+
+            foreach(Interest i in clinker.Interests)
+            {
+                if (i.Name == interest.Name)
+                {
+                    clinker.Interests.Remove(i);
+                    return Ok();
+                }
+            }
+
+            return NotFound();
         }
     }
 }
