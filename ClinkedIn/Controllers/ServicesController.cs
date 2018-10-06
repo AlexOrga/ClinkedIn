@@ -19,7 +19,7 @@ namespace ClinkedIn.Controllers
             var _storage = new ClinkerStorage();
             var allClinkers = _storage.GetClinkers();
 
-            var results = allClinkers.Where(clinker => clinker.Services.Any(s=> s.Name == searchedService));
+            var results = allClinkers.Where(clinker => clinker.Services.Any(s => s.Name == searchedService));
 
             return Ok(results);
         }
@@ -33,6 +33,40 @@ namespace ClinkedIn.Controllers
             myService.Add(newService);
 
             return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateService(int id, Service updateService)
+        {
+            var storage = new ClinkerStorage();
+            var serviceUpdate = storage.GetById(id).Services;
+            foreach (Service service in serviceUpdate)
+            {
+                if (service.Name == updateService.Name)
+                {
+                    service.Cost = updateService.Cost;
+                    service.Description = updateService.Description;
+
+                }       
+            }
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteService(int id, Service deleteService)
+        {
+            var storage = new ClinkerStorage();
+            var allRecords = storage.GetById(id).Services;
+            var serviceRecordsToKeep = new List<Service>();
+            foreach (Service service in allRecords)
+            {
+                if (service.Name != deleteService.Name)
+                {
+                    serviceRecordsToKeep.Add(service);
+                }
+            }
+            storage.GetById(id).Services = serviceRecordsToKeep;
+                return Ok();
         }
     }
 }
